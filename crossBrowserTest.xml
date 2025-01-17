@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="classes" name="Suite">
+  <test thread-count="5"  name="Chrome Test">
+  <parameter name="browser" value="chrome"></parameter>
+  <parameter name="CrossBrowser" value="Yes"></parameter>
+    <classes>
+      <class name="SelFrameworkDesign.Tests.createEmployeeT"/>
+      <class name="SelFrameworkDesign.Tests.createEmployeeDataProviderTest"/>
+      <class name="SelFrameworkDesign.Tests.CollapsePageTest"/>
+      <class name="SelFrameworkDesign.Tests.createEmployeeDataProviderHashMapTest"/>
+      <class name="SelFrameworkDesign.Tests.MenuPageTest"/>
+      <class name="SelFrameworkDesign.Tests.loginPageT"/>
+      <class name="SelFrameworkDesign.Tests.popUpPageTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  
+  <test thread-count="5"  name="FireFox Test">
+  <parameter name="browser" value="firefox"></parameter>
+  <parameter name="CrossBrowser" value="Yes"></parameter>
+    <classes>
+      <class name="SelFrameworkDesign.Tests.createEmployeeT"/>
+      <class name="SelFrameworkDesign.Tests.createEmployeeDataProviderTest"/>
+      <class name="SelFrameworkDesign.Tests.CollapsePageTest"/>
+      <class name="SelFrameworkDesign.Tests.createEmployeeDataProviderHashMapTest"/>
+      <class name="SelFrameworkDesign.Tests.MenuPageTest"/>
+      <class name="SelFrameworkDesign.Tests.loginPageT"/>
+      <class name="SelFrameworkDesign.Tests.popUpPageTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+</suite> <!-- Suite -->
+
+

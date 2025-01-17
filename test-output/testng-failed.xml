@@ -1,17 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite parallel="classes" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="classes" name="Chrome Test(failed)">
+    <parameter name="CrossBrowser" value="Yes"/>
+    <parameter name="browser" value="chrome"/>
     <classes>
+      <class name="SelFrameworkDesign.Tests.popUpPageTest">
+        <methods>
+          <include name="closeEntireBrowser"/>
+          <include name="ConfirmBoxTEst"/>
+          <include name="crossBrowserSetUp"/>
+          <include name="AlertBoxTEst"/>
+          <include name="closeBrowser"/>
+          <include name="InWindowPopupTest"/>
+          <include name="PromptBoxTEst"/>
+          <include name="extenteReports"/>
+        </methods>
+      </class> <!-- SelFrameworkDesign.Tests.popUpPageTest -->
+      <class name="SelFrameworkDesign.Tests.loginPageT">
+        <methods>
+          <include name="closeEntireBrowser"/>
+          <include name="crossBrowserSetUp"/>
+          <include name="loginTest"/>
+          <include name="closeBrowser"/>
+          <include name="extenteReports"/>
+        </methods>
+      </class> <!-- SelFrameworkDesign.Tests.loginPageT -->
+      <class name="SelFrameworkDesign.Tests.createEmployeeDataProviderTest">
+        <methods>
+          <include name="closeEntireBrowser"/>
+          <include name="crossBrowserSetUp"/>
+          <include name="closeBrowser"/>
+          <include name="extenteReports"/>
+          <include name="createEmployee"/>
+        </methods>
+      </class> <!-- SelFrameworkDesign.Tests.createEmployeeDataProviderTest -->
       <class name="SelFrameworkDesign.Tests.CollapsePageTest">
         <methods>
           <include name="closeEntireBrowser"/>
           <include name="singleCollapseTest"/>
-          <include name="WebDriverSetup"/>
+          <include name="crossBrowserSetUp"/>
+          <include name="multipleCollapseTest"/>
           <include name="closeBrowser"/>
           <include name="extenteReports"/>
         </methods>
       </class> <!-- SelFrameworkDesign.Tests.CollapsePageTest -->
+      <class name="SelFrameworkDesign.Tests.createEmployeeDataProviderHashMapTest">
+        <methods>
+          <include name="closeEntireBrowser"/>
+          <include name="crossBrowserSetUp"/>
+          <include name="createEmployee"/>
+          <include name="closeBrowser"/>
+          <include name="extenteReports"/>
+        </methods>
+      </class> <!-- SelFrameworkDesign.Tests.createEmployeeDataProviderHashMapTest -->
+      <class name="SelFrameworkDesign.Tests.createEmployeeT">
+        <methods>
+          <include name="closeEntireBrowser"/>
+          <include name="crossBrowserSetUp"/>
+          <include name="closeBrowser"/>
+          <include name="createEmployee"/>
+          <include name="extenteReports"/>
+        </methods>
+      </class> <!-- SelFrameworkDesign.Tests.createEmployeeT -->
+      <class name="SelFrameworkDesign.Tests.MenuPageTest">
+        <methods>
+          <include name="closeEntireBrowser"/>
+          <include name="crossBrowserSetUp"/>
+          <include name="closeBrowser"/>
+          <include name="subMenuTest"/>
+          <include name="SinleMenuTest"/>
+          <include name="extenteReports"/>
+        </methods>
+      </class> <!-- SelFrameworkDesign.Tests.MenuPageTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Chrome Test(failed) -->
+  <test thread-count="5" parallel="classes" name="FireFox Test(failed)">
+    <parameter name="CrossBrowser" value="Yes"/>
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="SelFrameworkDesign.Tests.popUpPageTest">
+        <methods>
+          <include name="closeEntireBrowser"/>
+          <include name="ConfirmBoxTEst"/>
+          <include name="crossBrowserSetUp"/>
+          <include name="AlertBoxTEst"/>
+          <include name="closeBrowser"/>
+          <include name="InWindowPopupTest"/>
+          <include name="PromptBoxTEst"/>
+          <include name="extenteReports"/>
+        </methods>
+      </class> <!-- SelFrameworkDesign.Tests.popUpPageTest -->
+      <class name="SelFrameworkDesign.Tests.loginPageT">
+        <methods>
+          <include name="closeEntireBrowser"/>
+          <include name="crossBrowserSetUp"/>
+          <include name="loginTest"/>
+          <include name="closeBrowser"/>
+          <include name="extenteReports"/>
+        </methods>
+      </class> <!-- SelFrameworkDesign.Tests.loginPageT -->
+      <class name="SelFrameworkDesign.Tests.createEmployeeDataProviderTest">
+        <methods>
+          <include name="closeEntireBrowser"/>
+          <include name="crossBrowserSetUp"/>
+          <include name="closeBrowser"/>
+          <include name="extenteReports"/>
+          <include name="createEmployee"/>
+        </methods>
+      </class> <!-- SelFrameworkDesign.Tests.createEmployeeDataProviderTest -->
+      <class name="SelFrameworkDesign.Tests.CollapsePageTest">
+        <methods>
+          <include name="closeEntireBrowser"/>
+          <include name="singleCollapseTest"/>
+          <include name="crossBrowserSetUp"/>
+          <include name="multipleCollapseTest"/>
+          <include name="closeBrowser"/>
+          <include name="extenteReports"/>
+        </methods>
+      </class> <!-- SelFrameworkDesign.Tests.CollapsePageTest -->
+      <class name="SelFrameworkDesign.Tests.createEmployeeDataProviderHashMapTest">
+        <methods>
+          <include name="closeEntireBrowser"/>
+          <include name="crossBrowserSetUp"/>
+          <include name="createEmployee"/>
+          <include name="closeBrowser"/>
+          <include name="extenteReports"/>
+        </methods>
+      </class> <!-- SelFrameworkDesign.Tests.createEmployeeDataProviderHashMapTest -->
+      <class name="SelFrameworkDesign.Tests.createEmployeeT">
+        <methods>
+          <include name="closeEntireBrowser"/>
+          <include name="crossBrowserSetUp"/>
+          <include name="closeBrowser"/>
+          <include name="createEmployee"/>
+          <include name="extenteReports"/>
+        </methods>
+      </class> <!-- SelFrameworkDesign.Tests.createEmployeeT -->
+      <class name="SelFrameworkDesign.Tests.MenuPageTest">
+        <methods>
+          <include name="closeEntireBrowser"/>
+          <include name="crossBrowserSetUp"/>
+          <include name="closeBrowser"/>
+          <include name="subMenuTest"/>
+          <include name="SinleMenuTest"/>
+          <include name="extenteReports"/>
+        </methods>
+      </class> <!-- SelFrameworkDesign.Tests.MenuPageTest -->
+    </classes>
+  </test> <!-- FireFox Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

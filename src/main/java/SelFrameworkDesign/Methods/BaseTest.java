@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
 import java.time.Duration;
 import java.util.Properties;
 
@@ -14,12 +17,15 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -73,7 +79,7 @@ public class BaseTest {
 
 	}
 
-	@BeforeMethod
+//	@BeforeMethod
 	public static void WebDriverSetup() {
 		String Browser = System.getProperty("browser") != null ? System.getProperty("browser") : "Chrome";
 		// String Browser = prop.getProperty("browser");
@@ -95,6 +101,42 @@ public class BaseTest {
 		driver.findElement(By.id("btnLogin")).click();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
+	}
+	@Parameters({"browser", "CrossBrowser"})
+	@BeforeMethod
+	public static void crossBrowserSetUp(String browser, String CrossBrowser) throws Exception {
+		if(CrossBrowser.equals("Yes")) {
+		
+		DesiredCapabilities cap = new DesiredCapabilities();
+		
+		if(browser.equalsIgnoreCase("chrome")) {
+			cap.setBrowserName("chrome");
+			 driver= new RemoteWebDriver(new URI("http://192.168.93.149:4444").toURL(), cap);
+			 
+		}
+		
+		if(browser.equalsIgnoreCase("firefox")) {
+			cap.setBrowserName("firefox");
+			 driver= new RemoteWebDriver(new URI("http://192.168.93.149:4444").toURL(), cap);
+			 
+		}
+		
+		if(browser.equalsIgnoreCase("edge")) {
+			cap.setBrowserName("edge");
+			 driver= new RemoteWebDriver(new URI("http://192.168.93.149:4444").toURL(), cap);
+			 
+		}
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		// String url = prop.getProperty("url");
+		driver.get("https://magnus.jalatechnologies.com/");
+		BaseTest bs = new BaseTest();
+		driver.findElement(By.id("UserName")).sendKeys(bs.getEmail());
+		driver.findElement(By.id("Password")).sendKeys(bs.getPassword());
+		driver.findElement(By.id("btnLogin")).click();
+		wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		
+	}
 	}
 
 	@AfterMethod

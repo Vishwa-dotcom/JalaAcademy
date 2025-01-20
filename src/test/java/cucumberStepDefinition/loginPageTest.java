@@ -10,7 +10,7 @@ import io.cucumber.java.en.When;
 public class loginPageTest extends BaseTest {
 
 	@Given("User is on Login Page")
-	public void user_is_on_login_page() {
+	public void user_is_on_login_page() throws Exception {
 		BaseTest.WebDriverSetup();
 		loginPageM.clickLogOutButton();
 		loginPageM.jalaAcademyPage();

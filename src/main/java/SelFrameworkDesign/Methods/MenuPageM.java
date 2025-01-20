@@ -11,12 +11,15 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import SelFrameworkDesign.WebElements.menuPageWE;
+import io.qameta.allure.Step;
 
 public class MenuPageM extends BaseTest  {
 	//////////////////////////////////////////Single Menu////////////////////////////////////////////////
 	
 	public static Actions action;
 	public static ExtentTest test;
+	
+	@Step("Navigated to More Option")
 	public static void clickOnMoreOption()  {
 		test = extent.createTest("Menu Page Test started");
 		test.log(Status.PASS, "TEst Passed");
@@ -27,6 +30,7 @@ public class MenuPageM extends BaseTest  {
 		menuPageWE.moreDropDown().click();
 	}
 	
+	@Step("Navigated to Menu Option and Validating Menu Option")
 	public static void clickOnMenuOption() {
 		WebElement MenuOption = menuPageWE.menuLink();
 		wait.until(ExpectedConditions.visibilityOf(MenuOption));
@@ -35,14 +39,16 @@ public class MenuPageM extends BaseTest  {
 		menuPageWE.menuLink().click();
 	}
 	
+	@Step("Clicked on Single Option")
 	public static void clickOnSingleMenu() {
 		menuPageWE.singleMenus().click();
 	}
 	
+	@Step("Clicked on Single Option")
 	public static void clickOnSingleMenuTesting() {
 		menuPageWE.singleMenuTesting().click();
 	}
-	
+	@Step("Validating Single Menu")
 	public static void getTextSingleMenuTesting() {
 		String singleMenuTestingText = menuPageWE.singleMenuTestingText().getText();
 		Assert.assertEquals(singleMenuTestingText, "You Have Selected Testing Menu Option.");
@@ -85,7 +91,7 @@ public class MenuPageM extends BaseTest  {
 		Assert.assertTrue(clickOnSubMenuTestingSeleniumIsDisplayed);
 		action.moveToElement(clickOnSubMenuTestingSelenium).click().perform();
 	}
-	
+	@Step("Validating Sub Menu")
 	public static void SubMenuTestingSeleniumGetText() {
 		WebElement SubMenuTestingSeleniumGetText = menuPageWE.subMenuTestingSeleniumOptionText();
 		wait.until(ExpectedConditions.visibilityOf(SubMenuTestingSeleniumGetText));

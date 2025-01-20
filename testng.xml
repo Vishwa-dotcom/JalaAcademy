@@ -3,7 +3,7 @@
 <suite name="Suite">
 	<listeners>
 		<listener
-			class-name="SelFrameworkDesign.ExtenteReports.ExtentetReporterListener" />
+			class-name="SelFrameworkDesign.Allure.AllureLiestner" />
 	</listeners>
 	<test thread-count="5" name="JalaAcademyTest">
 		<classes>

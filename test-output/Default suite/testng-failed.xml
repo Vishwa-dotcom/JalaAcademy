@@ -9,7 +9,6 @@
           <include name="singleCollapseTest"/>
           <include name="WebDriverSetup"/>
           <include name="closeBrowser"/>
-          <include name="extenteReports"/>
         </methods>
       </class> <!-- SelFrameworkDesign.Tests.CollapsePageTest -->
     </classes>

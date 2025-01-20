@@ -1,10 +1,13 @@
 package SelFrameworkDesign.Tests;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import SelFrameworkDesign.Allure.AllureLiestner;
 import SelFrameworkDesign.Methods.BaseTest;
 import SelFrameworkDesign.Methods.homePageM;
 
+@Listeners(AllureLiestner.class)
 public class createEmployeeDataProviderTest extends BaseTest {
 
 	@Test

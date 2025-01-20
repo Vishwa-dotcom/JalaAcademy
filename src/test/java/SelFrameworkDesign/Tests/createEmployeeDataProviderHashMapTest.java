@@ -3,15 +3,23 @@ package SelFrameworkDesign.Tests;
 import java.util.HashMap;
 
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+import SelFrameworkDesign.Allure.AllureLiestner;
 import SelFrameworkDesign.Methods.BaseTest;
 import SelFrameworkDesign.Methods.homePageM;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 
 
 
-
+@Listeners(AllureLiestner.class)
 public class createEmployeeDataProviderHashMapTest extends BaseTest {
-
+	@Description("Creating Employee Hash Map ")
+	@Feature("Employee")
+	@Story("Creating and validating Employee")
 	@Test(dataProvider = "getData")
 	public static void createEmployee(HashMap<String, String> data) {
 		homePageM.clickEmployeeLink();

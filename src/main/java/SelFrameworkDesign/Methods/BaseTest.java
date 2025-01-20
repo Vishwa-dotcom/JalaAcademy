@@ -35,6 +35,9 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.google.j2objc.annotations.Property;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Attachment;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 
 public class BaseTest {
 	public static WebDriver driver;
@@ -44,6 +47,7 @@ public class BaseTest {
 	public static ExtentTest test;
 	private  String Email;
 	private  String Password;
+	public static ThreadLocal<WebDriver> tdriver = new ThreadLocal<WebDriver>();
 
 	public  String getEmail() {
 		setEmail("training@jalaacademy.com");
@@ -78,9 +82,9 @@ public class BaseTest {
 		}
 
 	}
-
-//	@BeforeMethod
-	public static void WebDriverSetup() {
+	@Step("Launcing the Browser ")
+	@BeforeMethod
+	public static WebDriver WebDriverSetup() {
 		String Browser = System.getProperty("browser") != null ? System.getProperty("browser") : "Chrome";
 		// String Browser = prop.getProperty("browser");
 		if (Browser.equalsIgnoreCase("Chrome")) {
@@ -100,10 +104,16 @@ public class BaseTest {
 		driver.findElement(By.id("Password")).sendKeys(bs.getPassword());
 		driver.findElement(By.id("btnLogin")).click();
 		wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-
+		tdriver.set(driver);
+		return driver;
 	}
+	
+	public static synchronized WebDriver getDriver() {
+		return tdriver.get();
+	}
+	
 	@Parameters({"browser", "CrossBrowser"})
-	@BeforeMethod
+	//@BeforeMethod
 	public static void crossBrowserSetUp(String browser, String CrossBrowser) throws Exception {
 		if(CrossBrowser.equals("Yes")) {
 		
@@ -138,19 +148,19 @@ public class BaseTest {
 		
 	}
 	}
-
+	@Step("Closing the Browser")
 	@AfterMethod
 	public static void closeBrowser() {
 		driver.findElement(By.xpath("//a[@href='/Account/SignOut']")).click();
 		driver.close();
 	}
-
+	@Step("Closing all the windows and the Browser")
 	@AfterMethod
 	public static void closeEntireBrowser() {
 
-		driver.close();
+		driver.quit();
 	}
-
+	@Attachment
 	public static void getScreenshot(String testCasename) throws IOException {
 		TakesScreenshot tc = (TakesScreenshot) driver;
 		File source = tc.getScreenshotAs(OutputType.FILE);
@@ -182,5 +192,9 @@ public class BaseTest {
 	public static void onTestPass(ITestResult result) {
 		test.log(Status.PASS, result.getMethod().getMethodName());
 	}
+
+	
+
+
 
 }

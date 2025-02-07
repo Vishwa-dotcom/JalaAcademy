@@ -21,8 +21,8 @@ public class MenuPageM extends BaseTest  {
 	
 	@Step("Navigated to More Option")
 	public static void clickOnMoreOption()  {
-		test = extent.createTest("Menu Page Test started");
-		test.log(Status.PASS, "TEst Passed");
+		//test = extent.createTest("Menu Page Test started");
+	//	test.log(Status.PASS, "TEst Passed");
 		WebElement MoreOption = menuPageWE.moreDropDown();
 		wait.until(ExpectedConditions.visibilityOf(MoreOption));
 		boolean clickOnMoreOptionIsDisplayed = menuPageWE.moreDropDown().isDisplayed();

@@ -9,6 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
+
+import io.qameta.allure.Step;
 
 public class PopupsPageWEM extends BaseTest  {
 
@@ -55,11 +58,13 @@ public class PopupsPageWEM extends BaseTest  {
 	@FindBy(id = "promptBtn")
 	WebElement PromptBoxButton;
 	
-	
+	@Step("Click on pop up")
 	public  void ClickOnPopup() {
 		wait.until(ExpectedConditions.visibilityOf(PupupBtn));
+		SoftAssert sa = new SoftAssert();
 		boolean InWindowPupupBtnIsDiplayed =  PupupBtn.isDisplayed();
 		Assert.assertTrue(InWindowPupupBtnIsDiplayed);
+		sa.assertAll();
 		PupupBtn.click();
 		
 	}

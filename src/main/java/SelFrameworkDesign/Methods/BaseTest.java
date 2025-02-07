@@ -4,9 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URI;
-import java.net.URL;
 import java.time.Duration;
 import java.util.Properties;
 
@@ -16,27 +14,18 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.google.j2objc.annotations.Property;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Attachment;
-import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 
 public class BaseTest {
@@ -45,25 +34,25 @@ public class BaseTest {
 	public static WebDriverWait wait;
 	public static ExtentReports extent;
 	public static ExtentTest test;
-	private  String Email;
-	private  String Password;
+	private String Email;
+	private String Password;
 	public static ThreadLocal<WebDriver> tdriver = new ThreadLocal<WebDriver>();
 
-	public  String getEmail() {
+	public String getEmail() {
 		setEmail("training@jalaacademy.com");
 		return Email;
 	}
 
-	public  void setEmail(String Email) {
-		this.Email = Email; 
+	public void setEmail(String Email) {
+		this.Email = Email;
 	}
 
-	public  String getPassword() {
+	public String getPassword() {
 		setPassword("jobprogram");
 		return Password;
 	}
 
-	public  void setPassword(String Password) {
+	public void setPassword(String Password) {
 		this.Password = Password;
 	}
 
@@ -82,6 +71,7 @@ public class BaseTest {
 		}
 
 	}
+
 	@Step("Launcing the Browser ")
 	@BeforeMethod
 	public static WebDriver WebDriverSetup() {
@@ -107,59 +97,79 @@ public class BaseTest {
 		tdriver.set(driver);
 		return driver;
 	}
-	
+
 	public static synchronized WebDriver getDriver() {
 		return tdriver.get();
 	}
-	
-	@Parameters({"browser", "CrossBrowser"})
-	//@BeforeMethod
+
+	@Parameters({ "browser", "CrossBrowser" })
+	// @BeforeMethod
 	public static void crossBrowserSetUp(String browser, String CrossBrowser) throws Exception {
-		if(CrossBrowser.equals("Yes")) {
-		
-		DesiredCapabilities cap = new DesiredCapabilities();
-		
-		if(browser.equalsIgnoreCase("chrome")) {
-			cap.setBrowserName("chrome");
-			 driver= new RemoteWebDriver(new URI("http://192.168.93.149:4444").toURL(), cap);
-			 
+		if (CrossBrowser.equals("Yes")) {
+
+			DesiredCapabilities cap = new DesiredCapabilities();
+
+			if (browser.equalsIgnoreCase("chrome")) {
+				cap.setBrowserName("chrome");
+				driver = new RemoteWebDriver(new URI("http://192.168.93.149:4444").toURL(), cap);
+
+			}
+
+			if (browser.equalsIgnoreCase("firefox")) {
+				cap.setBrowserName("firefox");
+				driver = new RemoteWebDriver(new URI("http://192.168.93.149:4444").toURL(), cap);
+
+			}
+
+			if (browser.equalsIgnoreCase("edge")) {
+				cap.setBrowserName("edge");
+				driver = new RemoteWebDriver(new URI("http://192.168.93.149:4444").toURL(), cap);
+
+			}
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+			// String url = prop.getProperty("url");
+			driver.get("https://magnus.jalatechnologies.com/");
+			BaseTest bs = new BaseTest();
+			driver.findElement(By.id("UserName")).sendKeys(bs.getEmail());
+			driver.findElement(By.id("Password")).sendKeys(bs.getPassword());
+			driver.findElement(By.id("btnLogin")).click();
+			wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
 		}
-		
-		if(browser.equalsIgnoreCase("firefox")) {
-			cap.setBrowserName("firefox");
-			 driver= new RemoteWebDriver(new URI("http://192.168.93.149:4444").toURL(), cap);
-			 
-		}
-		
-		if(browser.equalsIgnoreCase("edge")) {
-			cap.setBrowserName("edge");
-			 driver= new RemoteWebDriver(new URI("http://192.168.93.149:4444").toURL(), cap);
-			 
-		}
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		// String url = prop.getProperty("url");
-		driver.get("https://magnus.jalatechnologies.com/");
+	}
+	//Headless Driver SetUp
+	public static void headlessTestSetup() {
+		WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
+		DesiredCapabilities capab = new DesiredCapabilities();
+		capab.setCapability(ChromeOptions.CAPABILITY, options);
+		options.merge(capab);
+		WebDriver headless= new ChromeDriver(options);
+		headless.get("https://magnus.jalatechnologies.com/");
 		BaseTest bs = new BaseTest();
-		driver.findElement(By.id("UserName")).sendKeys(bs.getEmail());
-		driver.findElement(By.id("Password")).sendKeys(bs.getPassword());
-		driver.findElement(By.id("btnLogin")).click();
-		wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		headless.findElement(By.id("UserName")).sendKeys(bs.getEmail());
+		headless.findElement(By.id("Password")).sendKeys(bs.getPassword());
+		headless.findElement(By.id("btnLogin")).click();
+		
 		
 	}
-	}
+
 	@Step("Closing the Browser")
 	@AfterMethod
 	public static void closeBrowser() {
 		driver.findElement(By.xpath("//a[@href='/Account/SignOut']")).click();
 		driver.close();
 	}
+
 	@Step("Closing all the windows and the Browser")
 	@AfterMethod
 	public static void closeEntireBrowser() {
 
 		driver.quit();
 	}
+
 	@Attachment
 	public static void getScreenshot(String testCasename) throws IOException {
 		TakesScreenshot tc = (TakesScreenshot) driver;
@@ -170,31 +180,6 @@ public class BaseTest {
 
 	}
 
-	@BeforeTest
-	public static ExtentReports extenteReports() {
-
-		String FilePath = System.getProperty("user.dir") + "//reports//index.html";
-		ExtentSparkReporter reporter = new ExtentSparkReporter(FilePath); // Is responsible for making configuration
-		reporter.config().setReportName("JalaAcademmy Automation Test Report");
-		reporter.config().setDocumentTitle("Automation Test Results");
-
-		extent = new ExtentReports();
-		extent.attachReporter(reporter);
-		extent.setSystemInfo("Tester", "Vishwanath");
-		return extent;
-	}
-
-	public static void onTestStart(ITestResult result) {
-		test = extent.createTest(result.getMethod().getMethodName());
-
-	}
-
-	public static void onTestPass(ITestResult result) {
-		test.log(Status.PASS, result.getMethod().getMethodName());
-	}
-
 	
-
-
 
 }

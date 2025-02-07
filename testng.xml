@@ -16,5 +16,18 @@
 			name="SelFrameworkDesign.Tests.createEmployeeDataProviderHashMapTest"/>-->
 		</classes>
 	</test>
+	
+		<test thread-count="5" name="JalaAcademyTest">
+		<parameter name="browser" value="firefox"></parameter>
+		<classes>
+			<class name="SelFrameworkDesign.Tests.loginPageT" />
+			<class name="SelFrameworkDesign.Tests.createEmployeeT" />
+			<class name="SelFrameworkDesign.Tests.MenuPageTest" />
+			<!-- <class
+			name="SelFrameworkDesign.Tests.createEmployeeDataProviderTest"/>
+      <class
+			name="SelFrameworkDesign.Tests.createEmployeeDataProviderHashMapTest"/>-->
+		</classes>
+	</test>
 </suite> <!--
 Suite -->

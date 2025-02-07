@@ -8,62 +8,11 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">JalaAcademyTest</a></td><td class="num">4</td><td class="num attn">1</td><td class="num">0</td><td class="num">0</td><td class="num">39,367</td><td></td><td></td></tr>
+<tr><th colspan="8">Default suite</th></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">17,512</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">JalaAcademyTest &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">SelFrameworkDesign.Tests.createEmployeeT</td><td><a href="#m0">closeBrowser</a></td><td rowspan="1">1737348587426</td><td rowspan="1">2254</td></tr><tr><th colspan="4">JalaAcademyTest &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="4">SelFrameworkDesign.Tests.createEmployeeT</td><td><a href="#m1">WebDriverSetup</a></td><td rowspan="1">1737348589726</td><td rowspan="1">-1737348589726</td></tr><tr class="skippedeven"><td><a href="#m2">closeBrowser</a></td><td rowspan="1">1737348589918</td><td rowspan="1">-1737348589918</td></tr><tr class="skippedeven"><td><a href="#m3">closeEntireBrowser</a></td><td rowspan="2">1737348589923</td><td rowspan="2">-1737348589923</td></tr><tr class="skippedeven"><td><a href="#m4">closeEntireBrowser</a></td></tr><tr><th colspan="4">JalaAcademyTest &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">SelFrameworkDesign.Tests.createEmployeeT</td><td><a href="#m5">createEmployee</a></td><td rowspan="1">1737348589740</td><td rowspan="1">0</td></tr><tr><th colspan="4">JalaAcademyTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">SelFrameworkDesign.Tests.MenuPageTest</td><td><a href="#m6">SinleMenuTest</a></td><td rowspan="1">1737348594978</td><td rowspan="1">2139</td></tr><tr class="passedeven"><td><a href="#m7">subMenuTest</a></td><td rowspan="1">1737348602875</td><td rowspan="1">2683</td></tr><tr class="passedodd"><td rowspan="1">SelFrameworkDesign.Tests.createEmployeeT</td><td><a href="#m8">createEmployee</a></td><td rowspan="1">1737348583719</td><td rowspan="1">3535</td></tr><tr class="passedeven"><td rowspan="1">SelFrameworkDesign.Tests.loginPageT</td><td><a href="#m9">loginTest</a></td><td rowspan="1">1737348576383</td><td rowspan="1">1715</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">SelFrameworkDesign.Tests.HeadlessTest</td><td><a href="#m0">headlessTestSetup</a></td><td rowspan="1">1738918789292</td><td rowspan="1">16464</td></tr></tbody>
 </table>
-<h2>JalaAcademyTest</h2><h3 id="m0">SelFrameworkDesign.Tests.createEmployeeT#closeBrowser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
-  (Session info: chrome=132.0.6834.84)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.4&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e999d6b0f00830ca9de92eef9f981619, clickElement {id=f.970F7CE84ED7FF389994567A23D1F4D0.d.321887270094CA46D1B841435254F421.e.72}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.84, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\VISHWA~1.BID\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53403}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53403/devtoo..., se:cdpVersion: 132.0.6834.84, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (e999d6b0f00830ca9de92eef9f981619)] -&gt; xpath: //a[@href=&apos;/Account/SignOut&apos;]]
-Session ID: e999d6b0f00830ca9de92eef9f981619
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at SelFrameworkDesign.Methods.BaseTest.closeBrowser(BaseTest.java:154)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">SelFrameworkDesign.Tests.createEmployeeT#WebDriverSetup</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">SelFrameworkDesign.Tests.createEmployeeT#closeBrowser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">SelFrameworkDesign.Tests.createEmployeeT#closeEntireBrowser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">SelFrameworkDesign.Tests.createEmployeeT#closeEntireBrowser</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">SelFrameworkDesign.Tests.createEmployeeT#createEmployee</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th></tr><tr class="param stripe"><td>Sada</td><td>B</td><td>Test@test.com</td><td>9876543212</td><td>10/10/1978</td><td>Test Street</td></tr><tr><th colspan="6">Exception</th></tr><tr><td colspan="6"><div class="stacktrace">org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
-  (Session info: chrome=132.0.6834.84)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.4&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e999d6b0f00830ca9de92eef9f981619, clickElement {id=f.970F7CE84ED7FF389994567A23D1F4D0.d.321887270094CA46D1B841435254F421.e.72}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.84, chrome: {chromedriverVersion: 132.0.6834.83 (03d59cf5ecf1..., userDataDir: C:\Users\VISHWA~1.BID\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53403}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53403/devtoo..., se:cdpVersion: 132.0.6834.84, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (e999d6b0f00830ca9de92eef9f981619)] -&gt; xpath: //a[@href=&apos;/Account/SignOut&apos;]]
-Session ID: e999d6b0f00830ca9de92eef9f981619
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at SelFrameworkDesign.Methods.BaseTest.closeBrowser(BaseTest.java:154)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">SelFrameworkDesign.Tests.MenuPageTest#SinleMenuTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m7">SelFrameworkDesign.Tests.MenuPageTest#subMenuTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m8">SelFrameworkDesign.Tests.createEmployeeT#createEmployee</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th><th>Parameter #6</th></tr><tr class="param stripe"><td>Vishwa</td><td>B</td><td>Test@test.com</td><td>1234567890</td><td>11/11/1997</td><td>Test Street</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m9">SelFrameworkDesign.Tests.loginPageT#loginTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Default test</h2><h3 id="m0">SelFrameworkDesign.Tests.HeadlessTest#headlessTestSetup</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

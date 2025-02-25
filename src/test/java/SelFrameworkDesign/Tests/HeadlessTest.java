@@ -10,9 +10,7 @@ import org.testng.annotations.Test;
 import SelFrameworkDesign.Methods.BaseTest;
 import SelFrameworkDesign.Methods.MenuPageM;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import io.qameta.allure.Description;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
+
 
 public class HeadlessTest {
 	

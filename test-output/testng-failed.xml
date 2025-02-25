@@ -3,11 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SelFrameworkDesign.Tests.HeadlessTest">
+      <class name="SelFrameworkDesign.Tests.actionsTest">
         <methods>
-          <include name="headlessTestSetup"/>
+          <include name="closeEntireBrowser"/>
+          <include name="WebDriverSetup"/>
+          <include name="closeBrowser"/>
+          <include name="actionTest"/>
         </methods>
-      </class> <!-- SelFrameworkDesign.Tests.HeadlessTest -->
+      </class> <!-- SelFrameworkDesign.Tests.actionsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

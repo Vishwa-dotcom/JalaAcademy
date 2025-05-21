@@ -8,6 +8,7 @@ import java.util.HashMap;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import SelFrameworkDesign.Methods.BaseTest;
@@ -25,7 +26,29 @@ public class createEmployeeExcel extends BaseTest {
 	@Feature("Employee")
 	@Severity(SeverityLevel.NORMAL)
 	@Story("Creating and validating Employee")
-	@Test
+	
+	@Test(dataProvider = "importData")
+	public static void CreateEmployee(String firstName,String lastName,String email,String mobileno, String dob) {
+		homePageM.clickEmployeeLink();
+		homePageM.clickCreateLink();
+		homePageM.enterFirstName(firstName);
+		homePageM.enterLastName(lastName);
+		homePageM.enterEmail(email);
+		homePageM.enterMobileNo(mobileno);
+		homePageM.DOB(dob);
+		homePageM.genderSelectFeMale();
+		homePageM.addAddress("Test");
+		homePageM.selectCountry();
+		homePageM.selectCity();
+		homePageM.selectSkill();
+		homePageM.clickSave();
+	}
+	
+	
+	
+	
+	
+	@DataProvider()
 	public static void importData() throws Exception {
 		
 		
@@ -50,19 +73,7 @@ public class createEmployeeExcel extends BaseTest {
 			String city=cellData.getCell(6).getStringCellValue().toString();
 			//String skill=cellData.getCell(8).getStringCellValue();
 			wb.close();			
-			homePageM.clickEmployeeLink();
-			homePageM.clickCreateLink();
-			homePageM.enterFirstName(firstName);
-			homePageM.enterLastName(lastName);
-			homePageM.enterEmail(email);
-			homePageM.enterMobileNo(mobileno);
-			homePageM.DOB(dob);
-			homePageM.genderSelectFeMale();
-			homePageM.addAddress("Test");
-			homePageM.selectCountry();
-			homePageM.selectCity();
-			homePageM.selectSkill();
-			homePageM.clickSave();
+			
 			
 			
 		}

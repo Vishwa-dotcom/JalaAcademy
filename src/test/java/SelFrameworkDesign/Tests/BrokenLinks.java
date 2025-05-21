@@ -14,6 +14,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -33,6 +35,11 @@ public class BrokenLinks {
 		 driver.get("https://www.amazon.in/");
 		 List<WebElement> links = driver.findElements(By.tagName("a"));
 		 System.out.println("No of links" + links.size());
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		 
+		String pagesource = driver.getPageSource();
+		System.out.println("pagesource is "+ pagesource);
+		
 		 
 		 List<String> newUrlList = new ArrayList<>();
 		 for(WebElement e :links) {

@@ -2,24 +2,35 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-24T23:15:20 IST" name="Default suite" finished-at="2025-02-24T23:15:37 IST" duration-ms="17615">
+  <suite started-at="2025-03-20T16:48:49 IST" name="Default suite" finished-at="2025-03-20T16:49:11 IST" duration-ms="22659">
     <groups>
     </groups>
-    <test started-at="2025-02-24T23:15:20 IST" name="Default test" finished-at="2025-02-24T23:15:37 IST" duration-ms="17615">
+    <test started-at="2025-03-20T16:48:49 IST" name="Default test" finished-at="2025-03-20T16:49:11 IST" duration-ms="22659">
       <class name="SelFrameworkDesign.Tests.actionsTest">
-        <test-method is-config="true" signature="WebDriverSetup()[pri:0, instance:SelFrameworkDesign.Tests.actionsTest@1c5c616f]" started-at="2025-02-24T23:15:20 IST" name="WebDriverSetup" finished-at="2025-02-24T23:15:29 IST" duration-ms="9571" status="PASS">
+        <test-method is-config="true" signature="closebrowserIfAnyOpen()[pri:0, instance:SelFrameworkDesign.Tests.actionsTest@4248b963]" started-at="2025-03-20T16:48:49 IST" name="closebrowserIfAnyOpen" finished-at="2025-03-20T16:48:49 IST" duration-ms="128" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closebrowserIfAnyOpen -->
+        <test-method is-config="true" signature="WebDriverSetup()[pri:0, instance:SelFrameworkDesign.Tests.actionsTest@4248b963]" started-at="2025-03-20T16:48:49 IST" name="WebDriverSetup" finished-at="2025-03-20T16:49:03 IST" duration-ms="13520" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- WebDriverSetup -->
-        <test-method signature="actionTest()[pri:0, instance:SelFrameworkDesign.Tests.actionsTest@1c5c616f]" started-at="2025-02-24T23:15:30 IST" name="actionTest" finished-at="2025-02-24T23:15:36 IST" duration-ms="6186" status="PASS">
+        <test-method signature="actionTest()[pri:0, instance:SelFrameworkDesign.Tests.actionsTest@4248b963]" started-at="2025-03-20T16:49:03 IST" name="actionTest" finished-at="2025-03-20T16:49:10 IST" duration-ms="6560" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- actionTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:SelFrameworkDesign.Tests.actionsTest@1c5c616f]" started-at="2025-02-24T23:15:36 IST" name="closeBrowser" finished-at="2025-02-24T23:15:37 IST" duration-ms="736" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:SelFrameworkDesign.Tests.actionsTest@4248b963]" started-at="2025-03-20T16:49:10 IST" name="closeBrowser" finished-at="2025-03-20T16:49:11 IST" duration-ms="1046" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="closeEntireBrowser()[pri:0, instance:SelFrameworkDesign.Tests.actionsTest@1c5c616f]" started-at="2025-02-24T23:15:37 IST" name="closeEntireBrowser" finished-at="2025-02-24T23:15:37 IST" duration-ms="518" status="PASS">
+        <test-method is-config="true" signature="closeEntireBrowser(org.testng.ITestResult)[pri:0, instance:SelFrameworkDesign.Tests.actionsTest@4248b963]" started-at="2025-03-20T16:49:11 IST" name="closeEntireBrowser" finished-at="2025-03-20T16:49:11 IST" duration-ms="489" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=actionTest status=SUCCESS method=actionsTest.actionTest()[pri:0, instance:SelFrameworkDesign.Tests.actionsTest@4248b963] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeEntireBrowser -->

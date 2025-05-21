@@ -35,5 +35,6 @@ public class ActionsWEM {
 	public void moveAndClinkOnMore() {
 		Actions act = new Actions(driver);
 		act.moveToElement(MoreOption).click().perform();
+		
 	}
 }

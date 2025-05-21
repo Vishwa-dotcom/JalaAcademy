@@ -1,0 +1,15 @@
+SelFrameworkDesign\Methods\ActionsWEM.class
+SelFrameworkDesign\WebElements\collapsePageWE.class
+SelFrameworkDesign\Methods\homePageM.class
+SelFrameworkDesign\Methods\FramesTestWEM.class
+SelFrameworkDesign\ExtenteReports\ExtentetReporterListener.class
+SelFrameworkDesign\Methods\linksPageWEM.class
+SelFrameworkDesign\Allure\AllureLiestner.class
+SelFrameworkDesign\Methods\BaseTest.class
+SelFrameworkDesign\Methods\MenuPageM.class
+SelFrameworkDesign\Methods\windowHandleWEM.class
+SelFrameworkDesign\WebElements\menuPageWE.class
+SelFrameworkDesign\Methods\loginPageM.class
+SelFrameworkDesign\Methods\PopupsPageWEM.class
+SelFrameworkDesign\WebElements\homePageWE.class
+SelFrameworkDesign\WebElements\loginPageWE.class

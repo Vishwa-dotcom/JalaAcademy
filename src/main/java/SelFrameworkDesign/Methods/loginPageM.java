@@ -1,5 +1,9 @@
 package SelFrameworkDesign.Methods;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -63,6 +67,12 @@ public class loginPageM extends BaseTest {
 		Assert.assertTrue(mailBox, "mailBox not displayed");
 		
 		System.out.println("Validation for all the elements in Login Page - Completed");
+	}
+	
+	public static void getTitleOfAllLinks() {
+		List<WebElement> links = driver.findElements(By.tagName("a"));
+		links.forEach(e->System.out.println(e.getText()));
+		
 	}
 
 }

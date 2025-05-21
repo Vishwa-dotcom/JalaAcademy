@@ -84,5 +84,6 @@ public class menuPageWE extends BaseTest {
 	
 	public static WebElement subMenuTestingUnitTestingOption() {
 		return driver.findElement(By.xpath("//a[text() = 'Unit Testing']"));
+		
 	}
 }

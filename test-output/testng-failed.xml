@@ -8,6 +8,7 @@
           <include name="closeEntireBrowser"/>
           <include name="WebDriverSetup"/>
           <include name="closeBrowser"/>
+          <include name="closebrowserIfAnyOpen"/>
           <include name="actionTest"/>
         </methods>
       </class> <!-- SelFrameworkDesign.Tests.actionsTest -->

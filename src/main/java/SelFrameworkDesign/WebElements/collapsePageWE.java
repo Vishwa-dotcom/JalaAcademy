@@ -1,5 +1,6 @@
 package SelFrameworkDesign.WebElements;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -118,6 +119,11 @@ public class collapsePageWE extends BaseTest  {
 	public void getLearnAnythingOptions(String LearnAnythingOption) {
 		boolean LearnOption = LearnAnythingOptions.stream().filter(e->e.getText().equals(LearnAnythingOption)).findFirst().isPresent();
 		Assert.assertTrue(LearnOption);
+	}
+	
+	public  void Test() {
+		List<WebElement> ls =new ArrayList<>();
+		ls.add(MultipleCollapse);
 	}
 	
 	

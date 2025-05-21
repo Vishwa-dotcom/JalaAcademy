@@ -22,11 +22,12 @@ public class loginPageT extends BaseTest {
 	@Story("Login Page Validation")
 	@Test
 	public static void loginTest() {
-		ExtentTest test = extent.createTest("Login Page Test");
+		//ExtentTest test = extent.createTest("Login Page Test");
 		loginPageM.clickLogOutButton();
 		loginPageM.validateAllElementsfromLoginPage();
 		loginPageM.enterUserName("training@jalaacademy.com");
 		loginPageM.enterPassword("jobprogram");
+		loginPageM.getTitleOfAllLinks();
 		loginPageM.clickLoginButton();
 		
 

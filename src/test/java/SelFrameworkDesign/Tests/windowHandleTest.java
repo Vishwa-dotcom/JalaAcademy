@@ -33,6 +33,8 @@ public class windowHandleTest extends BaseTest {
 		windowHandleWEM.clickOnLinkTwo();
 		Set<String> windows = driver.getWindowHandles();
 		list = new ArrayList<>(windows);
+		System.out.println("Number of open windows set "+ windows.size());
+		System.out.println("Number of open windows "+ list.size());
 		getRightWindow("Magnus", list);
 		closeAllOtherWindows();
 	}

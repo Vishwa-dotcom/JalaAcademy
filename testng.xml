@@ -17,7 +17,7 @@
 		</classes>
 	</test>
 	
-		<test thread-count="5" name="JalaAcademyTest">
+		<test thread-count="5" name="Jala">
 		<parameter name="browser" value="firefox"></parameter>
 		<classes>
 			<class name="SelFrameworkDesign.Tests.loginPageT" />

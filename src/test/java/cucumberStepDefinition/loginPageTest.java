@@ -34,7 +34,7 @@ public class loginPageTest extends BaseTest {
 	public void user_should_login_to_application_successfully() {
 		loginPageM.jalaWelcomePage();
 		loginPageM.clickLogOutButton();
-		BaseTest.closeEntireBrowser();
+		BaseTest.closeEntireBrowser(null);
 	}
 
 }
